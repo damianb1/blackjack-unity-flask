@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% set active_page = "scores" %}
+
+{% block head %}
+<title>Scores</title>
+{% endblock %}
+
+
+{% block body %}
+
+
+
+<hr>
+
+
+<div class="jumbotron text-center ">
+  <h1>Scores</h1>
+  <p>...</p>
+</div>
+
+<div class="overflow-auto text-center row justify-content-center" style="max-height: 500px" >
+
+
+<table class="table table-hover table-responsive table-bordered">
+    <thead class="table-light"><tr><th>#</th><th>Name</th><th>Score</th><th>Date</th></tr></thead>
+    <tbody>
+      {% for game in scores%}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ game.name }}</td>
+        <td>{{ game.score }}</td>
+        <td>{{ game.date_posted }}</td>
+    </tr>
+
+  {% endfor %}
+</tbody>
+</table>
+</div>
+<hr>
+<div class="jumbotron text-center ">
+<h3>Check player's best score:</h3>
+<form action='/scores' method="POST">
+    Name: <input type="text" name="name" id="name">
+
+    <input class="btn btn-dark" type="submit" value="Get">
+</form>
+<b>{{player}}  {{highscore}}
+</b>
+</div>
+
+
+{% endblock %}
