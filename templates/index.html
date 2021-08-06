@@ -15,11 +15,13 @@
 
 {% block body %}
 <hr>
-<div class="jumbotron text-center ">
+<div class="jumbotron text-center " style="height:400px">
   <h1>Game</h1>
-  <p>...</p>
+  
 </div>
 
+<br><br>
+<div style="position:relative">
 <div id="unity-container" class="unity-desktop">
   <canvas id="unity-canvas"></canvas>
   <div id="unity-loading-bar">
@@ -34,13 +36,14 @@
     <div id="unity-build-title">blackjack_test</div>
   </div>
 </div>
+</div>
 <script>
   var buildUrl = "{{ url_for('static', filename='blackjack_unity/Build') }}";
-  var loaderUrl = buildUrl + "/Blackjack7.loader.js";
+  var loaderUrl = buildUrl + "/Blackjack8.loader.js";
   var config = {
-    dataUrl: buildUrl + "/Blackjack7.data",
-    frameworkUrl: buildUrl + "/Blackjack7.framework.js",
-    codeUrl: buildUrl + "/Blackjack7.wasm",
+    dataUrl: buildUrl + "/Blackjack8.data",
+    frameworkUrl: buildUrl + "/Blackjack8.framework.js",
+    codeUrl: buildUrl + "/Blackjack8.wasm",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "DefaultCompany",
     productName: "blackjack_test",
