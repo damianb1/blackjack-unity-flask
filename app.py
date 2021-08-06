@@ -4,14 +4,14 @@ from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
-# from flask_cors import CORS
+from flask_cors import CORS
 
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///game_scores.db'
 db = SQLAlchemy(app)
 
-# CORS(app)
+CORS(app)
 
 class GameScore(db.Model):
     id = db.Column(db.Integer, primary_key=True)
