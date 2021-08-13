@@ -8,7 +8,7 @@ from flask_cors import CORS
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///game_scores.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///...'
 db = SQLAlchemy(app)
 
 CORS(app)
